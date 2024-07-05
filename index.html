@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante El Buen Sabor</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+       
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+      
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+       
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px; 
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background: #e67e22;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #d35400;
+        }
+
+        
+        .hero {
+            text-align: center;
+        }
+
+        .hero-img {
+            width: 95%;
+            height: 500px;
+            border: rgb(255, 255, 255) 3px solid;
+        }
+
+        
+        #menu {
+            background-color: #fff;
+            padding: 2rem 0;
+        }
+
+        #menu h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #222;
+        }
+
+        .menu-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .menu-item {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 1rem;
+            width: 300px;
+            overflow: hidden;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-info {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .menu-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-info p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #e67e22;
+        }
+
+        
+        #about {
+            padding: 2rem 0;
+        }
+
+        #about h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+       
+        #contact {
+            background: #e4e4e4;
+            padding: 2rem 0;
+        }
+
+        #contact h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        form label {
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            background: #e67e22;
+            color: #fff;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #d35400;
+        }
+
+        #map {
+            padding: 2rem 0;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .social-icons {
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+        
+        .footer-text {
+            text-align: center;
+        }
+
+        .footer-text p {
+            background-color: rgb(255, 193, 193);
+            border: rgb(255, 255, 255) 3px solid;
+            padding: 1rem;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>RESTAURANTE CERTUS</h1>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Inicio</a></li>
+            <li><a href="#menu">Menú</a></li>
+            <li><a href="/presupuesto.html">Presupuesto</a></li>
+            <li><a href="/login.html">Login</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <div class="hero">
+            <img src="/img/339529-PA8IK0-114.jpg" alt="Presentación de alimentos" class="hero-img">
+            <h2>Bienvenidos al RESTAURANTE CERTUS</h2>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <p style="text-align: center;">Nos complace recibirles aquí, cada detalle ha sido cuidadosamente diseñado para ofrecerles una experiencia culinaria inigualable.
+
+                Déjense llevar por nuestro exquisito menú, que combina lo mejor de la tradición con un toque contemporáneo. Nuestros chefs utilizan ingredientes frescos y de la más alta calidad para crear platos que son verdaderas obras de arte.
+                
+                En cada comida es una celebración, y cada visita, una oportunidad para disfrutar de momentos memorables en un ambiente refinado y acogedor.
+                
+                Les invitamos a explorar nuestros espacios elegantes, donde el servicio atento y la atmósfera de distinción les garantizarán una velada inolvidable.
+                
+                Gracias por elegirnos. ¡Esperamos que disfruten de su experiencia con nosotros!</p>
+        </div>
+    </section>
+    <section id="menu">
+        <div class="container">
+            <h2>Menú</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="/img/ceviche.jpg" alt="Ceviche">
+                    <div class="menu-info">
+                        <h3>Ceviche</h3>
+                        <p>Descripción del ceviche. Delicioso plato típico peruano con pescado fresco, limón, cebolla y más.</p>
+                        <p class="price">$10.00</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/img/pachamanca.jpg" alt="Plato 2">
+                    <div class="menu-info">
+                        <h3>Pachamanca</h3>
+                        <p>Descripción del plato 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="price">$12.00</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/img/causa_limena_31268_orig.jpg" alt="Plato 3">
+                    <div class="menu-info">
+                        <h3>Causa</h3>
+                        <p>Descripción del plato 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="price">$14.00</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/img/Aji-de-Gallina-Peruano.jpeg" alt="Plato 3">
+                    <div class="menu-info">
+                        <h3>Aji de gallina</h3>
+                        <p>Descripción del plato 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="price">$14.00</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/img/arroz_tapado_de_atun_76623_orig.jpg" alt="Plato 3">
+                    <div class="menu-info">
+                        <h3>Arroz Tapado</h3>
+                        <p>Descripción del plato 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="price">$14.00</p>
+                    </div>
+                </div>
+               
+                
+            </div>
+        </div>
+    </section>
+    <section id="map">
+        <div class="container">
+            <h2 style="text-align: center;">UBICACION</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.9371578500736!2d-76.94405122415026!3d-12.184679244485533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b917d5e3dc0b%3A0x57f2a1141c5da6f!2sInstituto%20CERTUS%20-%20Sede%20Villa!5e0!3m2!1ses!2spe!4v1719582114426!5m2!1ses!2spe" width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    <section id="footer">
+        <div class="container">
+            <table style="margin: 0 auto;"> 
+                <tr>
+                    <td>
+                        <img src="/img/goku.jpg" alt="Goku" style="width: 400px; height: 300px; border: rgb(255, 255, 255) 3px solid;">
+                    </td>
+                    <td style="vertical-align: bottom;">
+                        <div class="footer-text">
+                            <p style="background-color:rgb(255, 193, 193); border: rgb(255, 255, 255) 3px solid;">SOMOS PERUANOS AL 100%</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>AUTOR: JHONATAN FRANK PORTILLO TOLEDO</p>
+            <div class="contact-info">
+                <p>atencion@certus.edu.pe</p>
+                <div class="social-icons">
+                    <a href="#"><img src="/img/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="/img/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="/img/whatsapp.png" alt="WhatsApp"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

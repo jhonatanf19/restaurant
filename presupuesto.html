@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto - Restaurante Certus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: #333;
+            padding: 0.5rem 0;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background: #e67e22;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            background: #d35400;
+        }
+
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            overflow: hidden;
+        }
+
+        .form-container img {
+            width: 100%;
+
+            max-width: 700px;
+            height: auto;
+        }
+
+        form {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        form label {
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        form input, form select {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            width: 48%;
+            background: #e67e22;
+            color: #fff;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0.5rem 1%;
+            display: inline-block;
+        }
+
+        form button:hover {
+            background: #d35400;
+        }
+
+        .results {
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Presupuesto - Restaurante Certus</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Inicio</a></li>
+            <li><a href="/index.html#menu">Menú</a></li>
+            <li><a href="/presupuesto.html">Presupuesto</a></li>
+            <li><a href="/login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="form-container">
+            <img src="/img/presupuesto.PNG" alt="Imagen de referencia">
+            <form id="presupuesto-form">
+                <label for="largo">Largo (m):</label>
+                <input type="number" id="largo" name="largo" required>
+
+                <label for="ancho">Ancho (m):</label>
+                <input type="number" id="ancho" name="ancho" required>
+
+                <label for="distrito">Distrito:</label>
+                <select id="distrito" name="distrito" required>
+                    <option value="">Seleccione un distrito</option>
+                    <option value="100">Distrito 1 - S/ 100 por m²</option>
+                    <option value="150">Distrito 2 - S/ 150 por m²</option>
+                    <option value="200">Distrito 3 - S/ 200 por m²</option>
+                </select>
+
+                <button type="button" onclick="calcularPresupuesto()">Calcular</button>
+                <button type="button" onclick="limpiarFormulario()">Limpiar</button>
+            </form>
+        </div>
+
+        <div class="results" id="results">
+            <p>Área: <span id="area"></span> m²</p>
+            <p>Valor en Soles: S/ <span id="valor-soles"></span></p>
+            <p>Valor en Dólares: $ <span id="valor-dolares"></span></p>
+        </div>
+    </div>
+
+    <script>
+        const tipoCambio = 3.5;
+
+        function calcularPresupuesto() {
+            const largo = parseFloat(document.getElementById('largo').value);
+            const ancho = parseFloat(document.getElementById('ancho').value);
+            const precioM2 = parseFloat(document.getElementById('distrito').value);
+
+            if (!largo || !ancho || !precioM2) {
+                alert('Por favor, complete todos los campos.');
+                return;
+            }
+
+            const area = largo * ancho;
+            const valorSoles = area * precioM2;
+            const valorDolares = valorSoles / tipoCambio;
+
+            document.getElementById('area').innerText = area.toFixed(2);
+            document.getElementById('valor-soles').innerText = valorSoles.toFixed(2);
+            document.getElementById('valor-dolares').innerText = valorDolares.toFixed(2);
+        }
+
+        function limpiarFormulario() {
+            document.getElementById('presupuesto-form').reset();
+            document.getElementById('area').innerText = '';
+            document.getElementById('valor-soles').innerText = '';
+            document.getElementById('valor-dolares').innerText = '';
+        }
+    </script>
+</body>
+</html>
+
